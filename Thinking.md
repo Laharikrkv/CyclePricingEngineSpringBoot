@@ -3,11 +3,13 @@
 # PART 1 - Problem Breakdown
 
 ## The Problem
-User: A salesperson at a cycle showroom
+User: A salesperson at a cycle showroom.
+
 What she needs:
 - Quick, accurate price calculations when assembling custom cycles for customers.
 - Clear breakdown showing individual component costs and total price.
 - Time-based pricing to quote reliable results.
+  
 What would frustate her: 
 - If output misses any specific component price leading to non-reliable total price.
 - Undefined date boundaries lead to unexpected increase/decrease in price.
