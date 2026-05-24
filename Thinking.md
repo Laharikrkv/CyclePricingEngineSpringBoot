@@ -45,43 +45,63 @@ How I structure the output. (MY INITIAL PLAN)
 - So Salesperson can show clearly different options to customers.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-#Part 2 Conceptual Solution and Code
-# 2a Data Model
+# Part 2: Conceptual Solution and Code
 
-My core entities:
-- Part -> represents a part of the cycle.
-- Price -> represents price of a part over every change for a period.
+## 2a. Data Model
 
+### Core Entities
 
-Part
-	- id - Long
-	- name - String
-	- component - String
-	- price_history -  List<Price>
+The core entities in this solution are:
 
-Price
-	- id - Long
-	- part_id - Long
-	- valid-from - date
-	- valid-till - date | null
-	- amount - BigDecimal
+- `Part` — represents a part of the cycle.
+- `Price` — represents the price history of a part over a specific period.
 
+---
 
-Relations between entities
-	- Part has many prices over the time.
-	- Each price record belongs to one part.
+## Entity Structure
 
+### Part
 
-Design Decision
-	- My approach is that I will check for each part listed in input.
-	- Since it is easier to fetch the part by name and by performing 
-		lazy loading, I will fetch list of price history.
-	- I check the input date in the list, and I will fetch the price.
-	- Then, by check the component of the part, I will add prices of 
-		all parts to the cycle configuration instance, it represent 
-		the output format.
-* I choose this approach because it is easier to iterate over input list
-as it limits the number of checks and easier to fetch by part name. i will write 
-a query that gives correct price at a date. Later I switch over part component,
-add the price component-wise and calculate the sum. This approach ensures one go
-for both price fetching and component-wise price calculation.*
+| Field | Type | Description |
+|---|---|---|
+| `id` | `Long` | Unique identifier of the part |
+| `name` | `String` | Name of the part |
+| `component` | `String` | Component/category the part belongs to |
+| `priceHistory` | `List<Price>` | List of historical prices for the part |
+
+### Price
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | `Long` | Unique identifier of the price record |
+| `partId` | `Long` | Reference to the related part |
+| `validFrom` | `Date` | Start date from which the price is valid |
+| `validTill` | `Date \| null` | End date until which the price is valid |
+| `amount` | `BigDecimal` | Price amount of the part |
+
+---
+
+## Relationships Between Entities
+
+- One `Part` can have many `Price` records over time.
+- Each `Price` record belongs to one `Part`.
+
+---
+
+## Design Decision
+
+My approach is to check each part listed in the input.
+
+For every input part:
+
+1. Fetch the part by name.
+2. Fetch its price history.
+3. Check which price is valid for the given input date.
+4. Based on the component of the part, add the price to the respective field in the cycle configuration object.
+5. After processing all parts, calculate the total price and return the final response.
+
+I chose this approach because it is simple and easy to understand. Iterating over the input list limits unnecessary checks, and fetching by part name keeps the flow clear.
+
+In implementation, I can also write a query that directly returns the correct price for a part on a given date. After fetching the price, I can use a `switch` statement on the part component to add the price component-wise and calculate the final total.
+
+This approach ensures that price fetching and component-wise calculation happen in a single flow.
