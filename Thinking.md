@@ -43,3 +43,45 @@ How I structure the output. (MY INITIAL PLAN)
 - I can store multpiple cycle configurations per user, so that they can compare.
 - Logic - From Input, we send userId, configuration table records the row with userId.
 - So Salesperson can show clearly different options to customers.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+#Part 2 Conceptual Solution and Code
+# 2a Data Model
+
+My core entities:
+- Part -> represents a part of the cycle.
+- Price -> represents price of a part over every change for a period.
+
+
+Part
+	- id - Long
+	- name - String
+	- component - String
+	- price_history -  List<Price>
+
+Price
+	- id - Long
+	- part_id - Long
+	- valid-from - date
+	- valid-till - date | null
+	- amount - BigDecimal
+
+
+Relations between entities
+	- Part has many prices over the time.
+	- Each price record belongs to one part.
+
+
+Design Decision
+	- My approach is that I will check for each part listed in input.
+	- Since it is easier to fetch the part by name and by performing 
+		lazy loading, I will fetch list of price history.
+	- I check the input date in the list, and I will fetch the price.
+	- Then, by check the component of the part, I will add prices of 
+		all parts to the cycle configuration instance, it represent 
+		the output format.
+* I choose this approach because it is easier to iterate over input list
+as it limits the number of checks and easier to fetch by part name. i will write 
+a query that gives correct price at a date. Later I switch over part component,
+add the price component-wise and calculate the sum. This approach ensures one go
+for both price fetching and component-wise price calculation.*
