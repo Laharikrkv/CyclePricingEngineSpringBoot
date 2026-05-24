@@ -138,5 +138,4 @@ This approach ensures that price fetching and component-wise calculation happen 
 | Pedals | Grip Pedals | 1,000 |
 | Crank Set | Single Crank Set | 1,500 |
 | Crank Set | Multi-Speed Crank Set | 3,500 |
-| Crank Set | Single Crank Set | 1,500 |
-| Crank Set | Multi-Speed Crank Set | 3,500 |
+
