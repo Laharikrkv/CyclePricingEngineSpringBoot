@@ -105,3 +105,47 @@ I chose this approach because it is simple and easy to understand. Iterating ove
 In implementation, I can also write a query that directly returns the correct price for a part on a given date. After fetching the price, I can use a `switch` statement on the part component to add the price component-wise and calculate the final total.
 
 This approach ensures that price fetching and component-wise calculation happen in a single flow.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+# Cycle Components with Reasonable Prices
+
+| Category | Subtype | Price (₹) |
+|---|---|---|
+| Frame | Steel Frame | 4,000 |
+| Frame | Aluminium Frame | 7,500 |
+
+| Handle Bar & Brakes | Standard Handlebar | 800 |
+| Handle Bar & Brakes | Drop Handlebar | 1,800 |
+| Handle Bar & Brakes | Flat Handlebar | 1,200 |
+| Handle Bar & Brakes | V-Brakes | 1,200 |
+| Handle Bar & Brakes | Disc Brakes | 3,000 |
+
+| Seating | Basic Saddle | 600 |
+| Seating | Ergonomic Saddle | 1,500 |
+
+| Seat Post | Standard Seat Post | 500 |
+| Seat Post | Adjustable Seat Post | 1,200 |
+
+| Rim | Alloy Rim | 2,000 |
+| Rim | Steel Rim | 1,500 |
+
+| Tyre | Road Tyre | 1,200 |
+| Tyre | Mountain Tyre | 2,000 |
+
+| Tube | Standard Tube | 300 |
+| Tube | Puncture Resistant Tube | 700 |
+
+| Spokes | Steel Spokes | 400 |
+| Spokes | Aluminium Spokes | 900 |
+
+| Chain | Single Speed Chain | 700 |
+| Chain | Multi-Speed Chain | 1,500 |
+
+| Gear Assembly | Single Gear | 1,000 |
+| Gear Assembly | Multi Gear | 4,000 |
+
+| Pedals | Standard Pedals | 500 |
+| Pedals | Grip Pedals | 1,000 |
+
+| Crank Set | Single Crank Set | 1,500 |
+| Crank Set | Multi-Speed Crank Set | 3,500 |
