@@ -139,3 +139,22 @@ This approach ensures that price fetching and component-wise calculation happen 
 | Crank Set | Single Crank Set | 1,500 |
 | Crank Set | Multi-Speed Crank Set | 3,500 |
 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Assumptions
+- Salesperson have pre-defined text for parts, she just pastes, so there is no spelling mistakes.
+- They have catalog for high-level components and parts.
+- Company has only 1 year-warranty schemes.
+
+## ADDED PLAN
+# Validation
+I have validation logic that check for whether parts required for cycle configuration is given.
+I explained the code flow with the help of comments.
+
+# Error Handling
+- If any required part is missed, duplicate entry, we will get error message with details.
+
+# Constraints with Date
+-  I have strictly constrained to record with data only within a year time. If date is given out of range, we get error message.
+
