@@ -1,0 +1,28 @@
+name,component
+Steel Frame,FRAME
+Aluminium Frame,FRAME
+Standard Handlebar,HANDLE_BAR_AND_BRAKES
+Drop Handlebar,HANDLE_BAR_AND_BRAKES
+Flat Handlebar,HANDLE_BAR_AND_BRAKES
+V-Brakes,HANDLE_BAR_AND_BRAKES
+Disc Brakes,HANDLE_BAR_AND_BRAKES
+Basic Saddle,SEATING
+Ergonomic Saddle,SEATING
+Standard Seat Post,SEATING
+Adjustable Seat Post,SEATING
+Alloy Rim,WHEELS
+Steel Rim,WHEELS
+Road Tyre,WHEELS
+Mountain Tyre,WHEELS
+Standard Tube,WHEELS
+Puncture Resistant Tube,WHEELS
+Steel Spokes,WHEELS
+Aluminium Spokes,WHEELS
+Single Speed Chain,CHAIN_ASSEMBLY
+Multi-Speed Chain,CHAIN_ASSEMBLY
+Single Gear,CHAIN_ASSEMBLY
+Multi Gear,CHAIN_ASSEMBLY
+Standard Pedals,CHAIN_ASSEMBLY
+Grip Pedals,CHAIN_ASSEMBLY
+Single Crank Set,CHAIN_ASSEMBLY
+Multi-Speed Crank Set,CHAIN_ASSEMBLY
