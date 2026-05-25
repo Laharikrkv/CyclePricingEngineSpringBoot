@@ -94,7 +94,7 @@ Docker was used to ensure:
 ### 1. Clone repository
 
 ```bash
-git clone <your-repository-url>
+git clone  https://github.com/Laharikrkv/CyclePricingEngine.git
 ```
 
 ### 2. Navigate to backend folder
